@@ -1,3 +1,32 @@
+# 一· 函数组件 与 类组件的使用
+
+## 1. 高阶组件 表达的意思就是 可以拦截 组件的渲染 需要做出一些事情 比如有的页面需要登录才可以显示页面
+
+## 1.1 什么是高阶组件
+
+```sh
+  1.11 把组件当做参数传 就是高阶组件
+        或 返回return 一个组件 也是高阶组件
+  1.12 详情login_ayth.jsx文件
+```
+
+# 二· react 的 styley(css 样式)编写 使用 styled-components 第三方库 (css in js)
+
+### 详情请看 detail—style.js 文件
+
+```sh
+  安装 npm install styled-components
+```
+
+# 三· 动态添加 className 使用第三方库 classnames
+
+### 详情请看 detail.jsx 文件 第 31 行 通过布尔值 动态添加 className
+
+```sh
+安装 npm install classnames
+
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
