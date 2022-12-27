@@ -6,12 +6,18 @@ export const DetailWrapper = styled.div.attrs((props) => ({
   tColor: props.color || 'blue'
 }))`
   .detail {
-    font-size: 30px;
-    color: red;
-
+    /* NavLink 转化为a标签 会自动添加上 active 类 */
+    /* 在这个class里detail 子路由也继承 */
+    a {
+      &.active {
+        color: green;
+        font-weight: 600;
+      }
+    }
     .item {
       font-size: ${(props) => props.size || '14px'};
       font-weight: 600;
+      color: red;
       &:hover {
         cursor: pointer;
       }

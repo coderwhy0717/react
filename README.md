@@ -20,10 +20,64 @@
 
 # 三· 动态添加 className 使用第三方库 classnames
 
-### 详情请看 detail.jsx 文件 第 31 行 通过布尔值 动态添加 className
+### 详情请看 detail.jsx 文件 第 57 行 通过布尔值 动态添加 className
 
 ```sh
 安装 npm install classnames
+
+```
+
+# 四· 安装路由
+
+```sh
+1. 安装 npm install react-router-dom
+
+2. index.js 文件中 得把App组件标签包裹 路由模式(哈希等模式)
+
+2.1 类组件使用 router 详情在 App类组件使用router.jsx文件中 或下面的 4.1 class 组件中使用 router
+
+3. 函数组件 router 统一使用一个文件管理 并且使用了懒加载模式打包发布的时候就是一个个js文件
+    (详情在router文件中)
+    就得在使用 Suspense 进行包裹
+    路由懒加载发布后浏览网页 下载路由懒加载单独包的时候会有缓冲 就让界面显示 fallback 里的内容
+
+    列如：
+      root.render(
+        <HashRouter>
+          <Suspense fallback={<h1>loading...</h1>}>
+            <App />
+          </Suspense>
+        </HashRouter>
+      )
+  Tips：
+    使用懒加载 router 需要 转化为 组件标签
+```
+
+## 4.1 class 组件中使用 router
+
+```sh
+ 站位符没有 直接使用
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Homet />} />
+          <Route path="/detail" element={<Detail />}>
+            {/* 二级路由 */}
+            <Route path="/detail" element={<Navigate to="/detail/rom" />} />
+            <Route path="/detail/rom" element={<DetailRom />} />
+            <Route path="/detail/song" element={<DetailSong />} />
+          </Route>
+          <Route path="/page" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+```
+
+## 4.2 函数组件中使用 router
+
+```sh
+{useRoutes(routes)} //只能在函数组件中使用
+详情 在02文件夹中 App函数组件的router使用.jsx 文件中
+
+使用 子路由 需要占位符 <Outlet />
 
 ```
 

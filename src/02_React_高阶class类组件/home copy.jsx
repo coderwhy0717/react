@@ -45,8 +45,5 @@ class Home extends PureComponent {
     )
   }
 }
-// 函数组件使用路由 就不需要这样返回 可以在 router文件使用高阶组件
-const Homet = loginAuth(Home)
-export { Home, Homet }
 
-export default Home
+export default loginAuth(Home)
